@@ -1,0 +1,29 @@
+<?php
+session_start();
+const SQL_CREATE_TABLE_USER = '
+    CREATE TABLE IF NOT EXISTS user (
+      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+      login VARCHAR(255) NOT NULL,
+      password VARCHAR(255) NOT NULL,
+      root INT(10) NOT NULL
+    )
+';
+
+const SQL_CREATE_TABLE_PRODUCTS = '
+    CREATE TABLE IF NOT EXISTS products (
+      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,  
+      name VARCHAR(255) NOT NULL,
+      img VARCHAR(255) NOT NULL,
+      cost INT(10) NOT NULL,
+      info VARCHAR(255) NOT NULL
+    )
+';
+//SQL_CREATE_TABLE_CATEGORIES
+
+const SQL_SELECT_PRODUCTS = '
+    SELECT * FROM products ORDER BY id DESC
+';
+
+const SQL_SELECT_USER = '
+    SELECT * FROM user
+';
